@@ -2,7 +2,9 @@
   <div class="root-container">
     <HeaderSection />
     <main>
-      <div class="test-body">test</div>
+      <div class="test-body">
+        <div></div>
+      </div>
     </main>
     <FooterSection />
   </div>
@@ -20,7 +22,13 @@ import FooterSection from './components/FooterSection.vue'
 }
 
 .test-body {
-  display: flex;
   height: 100vh;
+}
+.test-body > div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 30vh;
+  background-color: var(--bluegray-50);
 }
 </style>

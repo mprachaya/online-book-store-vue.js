@@ -94,4 +94,12 @@ ul > li {
   text-align: left; // Align the text of li elements to the left
   margin: 0.75rem;
 }
+@media screen and (max-width: 768px) {
+  .container {
+    display: block;
+  }
+  .container > div {
+    width: 100%;
+  }
+}
 </style>
