@@ -2,8 +2,8 @@
   <div class="root-container">
     <HeaderSection />
     <main>
-      <div class="test-body">
-        <div></div>
+      <div class="main-container">
+        <router-view />
       </div>
     </main>
     <FooterSection />
@@ -21,8 +21,8 @@ import FooterSection from './components/FooterSection.vue'
   margin: auto;
 }
 
-.test-body {
-  height: 100vh;
+.main-container {
+  min-height: 100vh;
 }
 .test-body > div {
   display: flex;
