@@ -3,6 +3,7 @@
     <HeaderSection />
     <main>
       <div class="main-container">
+        <!-- this make outlet for router -->
         <router-view />
       </div>
     </main>

@@ -101,5 +101,9 @@ ul > li {
   .container > div {
     width: 100%;
   }
+  .logoAndDesc {
+    margin: 3rem;
+    justify-content: start;
+  }
 }
 </style>
