@@ -23,7 +23,7 @@ const routes = [
     component: CartPage
   },
   {
-    path: '/bookdetails',
+    path: '/bookdetails/:bookId',
     name: 'BookDetailsPage',
     component: BookDetailsPage
   },
