@@ -1,5 +1,5 @@
 <template>
-  <div>home</div>
+  <AdsContent />
 </template>
 <script>
 export default {

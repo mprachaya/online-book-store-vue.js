@@ -112,6 +112,7 @@ import TreeTable from 'primevue/treetable'
 import TriStateCheckbox from 'primevue/tristatecheckbox'
 import VirtualScroller from 'primevue/virtualscroller'
 import LoginDialog from './components/LoginDialog.vue'
+import AdsContent from './views/home/AdsContent.vue'
 
 const app = createApp(App)
 
@@ -226,5 +227,6 @@ app.component('TreeTable', TreeTable)
 app.component('TriStateCheckbox', TriStateCheckbox)
 app.component('VirtualScroller', VirtualScroller)
 app.component('LoginDialog', LoginDialog)
+app.component('AdsContent', AdsContent)
 
 app.mount('#app')
