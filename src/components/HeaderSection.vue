@@ -1,7 +1,9 @@
 <template>
   <header class="sticky-header">
     <nav id="navbar" class="container">
-      <div class="logo">logo</div>
+      <div class="logo">
+        <i class="pi pi-book" style="font-size: 1.2rem">&nbsp;BookWannabe</i>
+      </div>
       <div class="container-menu">
         <div id="searchbar">
           <IconField iconPosition="left">
@@ -10,10 +12,14 @@
           </IconField>
         </div>
         <div v-if="userData" class="container-menu">
-          <span id="menu-cart">carts</span>
-          <span id="menu-favorites">favorites</span>
-          <span id="menu-profile">profile</span>
-          <span id="menu-profile" @click="logout">logout</span>
+          <span id="menu-cart"
+            >carts <i class="pi pi-shopping-cart" style="font-size: 1rem"></i
+          ></span>
+          <span id="menu-favorites"
+            >favorites <i class="pi pi-heart-fill" style="font-size: 0.9rem"></i
+          ></span>
+          <span id="menu-profile">profile <i class="pi pi-user" style="font-size: 1rem"></i></span>
+          <span id="menu-profile" @click="logout" class="logout">logout</span>
         </div>
         <div v-else><LoginDialog /></div>
         <div id="menu-burger">menu</div>
@@ -49,6 +55,9 @@ const userData = getCookie('user')
   margin-top: auto;
   margin-bottom: auto;
 }
+.logo > i {
+  margin: 1rem;
+}
 
 .container-menu {
   display: flex;
@@ -61,6 +70,10 @@ const userData = getCookie('user')
 }
 .container-menu {
   > span {
+    color: var(--gray-800);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
     margin: auto;
     padding: 0.5rem;
     cursor: pointer;
@@ -68,7 +81,19 @@ const userData = getCookie('user')
       text-decoration: underline;
     }
   }
+  > span.logout {
+    border: 1px solid black;
+    border-radius: 12px 5px 5px;
+    padding: 6px;
+    transition: all 0.3s ease;
+    &:hover {
+      text-decoration: none;
+      background-color: black;
+      color: white;
+    }
+  }
 }
+
 #searchbar {
   margin: auto;
 }

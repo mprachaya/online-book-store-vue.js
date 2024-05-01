@@ -23,7 +23,7 @@ export default {}
 
 <style>
 .root-container {
-  max-width: 1440px;
+  max-width: 1460px;
   margin: auto;
 }
 
