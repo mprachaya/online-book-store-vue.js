@@ -10,6 +10,6 @@ export default {
 </script>
 <style lang="scss">
 .ads-container {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 </style>

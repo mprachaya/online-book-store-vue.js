@@ -1,5 +1,6 @@
 <template>
   <div>
+    <span class="tel">tel : (093) 1374047</span>
     <Button class="btnLogin" @click="visible = true">Login</Button>
     <Dialog
       v-if="!visibleRegis"
@@ -112,7 +113,7 @@
 </template>
 
 <script setup>
-import { getCookie, setCookie } from '@/authen'
+import { setCookie } from '@/authen'
 import axios from 'axios'
 import { ref, watch } from 'vue'
 const url = import.meta.env.VITE_APP_API_URL_ENDPOINT
@@ -247,6 +248,15 @@ watch(visibleRegis, (newValue) => {
 </script>
 
 <style scoped lang="scss">
+.tel {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+    Verdana, sans-serif;
+  color: var(--gray-600);
+  padding: 0.75rem;
+}
+
 .btnLogin {
   color: var(--gray-200);
   font-size: 12px;

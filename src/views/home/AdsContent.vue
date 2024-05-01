@@ -6,6 +6,7 @@
   <div v-else class="ads-container">
     <div class="grid-chile-container">
       <Carousel
+        :autoplayInterval="4000"
         :value="mainAds"
         :numVisible="1"
         :numScroll="1"
@@ -22,6 +23,7 @@
     <div class="grid-chile-container">
       <Carousel
         class="sub-ads"
+        :autoplayInterval="4000"
         :value="subAds"
         :numVisible="1"
         :numScroll="1"
@@ -94,11 +96,13 @@ onMounted(() => {
 .p-carousel {
   position: relative;
 }
+.p-highlight button {
+  background-color: var(--gray-500);
+}
 
 .skeleton-container {
   display: grid;
   grid-template-columns: 1040px 446px;
-
   gap: 1rem;
 }
 .p-skeleton {

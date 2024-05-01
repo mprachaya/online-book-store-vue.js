@@ -30,11 +30,11 @@ export default {}
 .main-container {
   min-height: 100vh;
 }
-.test-body > div {
+/* .test-body > div {
   display: flex;
   justify-content: center;
   width: 100%;
   min-height: 30vh;
   background-color: var(--bluegray-50);
-}
+} */
 </style>
