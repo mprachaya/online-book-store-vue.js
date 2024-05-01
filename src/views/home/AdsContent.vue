@@ -83,12 +83,9 @@ const responsiveOptions = ref([
   position: relative;
 }
 
-.grid-chile-container {
-  // object-fit: cover;
-}
 .ads-container {
   display: grid;
-  grid-template-columns: 1000px 430px;
+  grid-template-columns: 1040px 446px;
 }
 
 img {
