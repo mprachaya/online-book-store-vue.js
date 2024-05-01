@@ -2,7 +2,7 @@
   <header class="sticky-header">
     <nav id="navbar" class="container">
       <div class="logo">
-        <i class="pi pi-book" style="font-size: 1.2rem">&nbsp;BookWannabe</i>
+        <i class="pi pi-book" style="font-size: 1.2rem"></i><span>BookWannabe</span>
       </div>
       <div class="container-menu">
         <div id="searchbar">
@@ -56,7 +56,7 @@ const userData = getCookie('user')
   margin-bottom: auto;
 }
 .logo > i {
-  margin: 1rem;
+  margin: 0.5rem;
 }
 
 .container-menu {

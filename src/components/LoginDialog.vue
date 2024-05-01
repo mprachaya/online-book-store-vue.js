@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Button @click="visible = true">Login</Button>
+    <Button class="btnLogin" @click="visible = true">Login</Button>
     <Dialog
       v-if="!visibleRegis"
       v-model:visible="visible"
@@ -247,6 +247,23 @@ watch(visibleRegis, (newValue) => {
 </script>
 
 <style scoped lang="scss">
+.btnLogin {
+  color: var(--gray-200);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: auto;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0px 12px 12px 12px;
+  transition: all 0.3s ease;
+  &:hover {
+    text-decoration: none;
+    background-color: white;
+    color: black;
+  }
+}
+
 .input {
   display: block;
   margin: 0.5rem;
