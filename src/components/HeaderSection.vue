@@ -77,10 +77,16 @@ const userData = getCookie('user')
     margin: auto;
     padding: 0.5rem;
     cursor: pointer;
+    transition: all 0.3s ease-out;
+
     &:hover {
       text-decoration: underline;
+      color: white;
+      background-color: var(--gray-800);
+      border-radius: 25px;
     }
   }
+
   > span.logout {
     border: 1px solid black;
     border-radius: 12px 5px 5px;
@@ -90,6 +96,7 @@ const userData = getCookie('user')
       text-decoration: none;
       background-color: black;
       color: white;
+      border-top-left-radius: 0px;
     }
   }
 }
