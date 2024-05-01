@@ -14,6 +14,11 @@
 <script setup>
 import HeaderSection from './components/HeaderSection.vue'
 import FooterSection from './components/FooterSection.vue'
+// import LoginDialog from './components/LoginDialog.vue'
+</script>
+
+<script>
+export default {}
 </script>
 
 <style>

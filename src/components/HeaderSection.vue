@@ -3,18 +3,31 @@
     <nav id="navbar" class="container">
       <div class="logo">logo</div>
       <div class="container-menu">
-        <InputText id="searchbar" variant="filled" type="text" size="small" placeholder="Search" />
-        <div id="menu-cart">carts</div>
-        <div id="menu-favorites">favorites</div>
-        <div id="menu-profile">profile</div>
-        <div id="menu-burger">menu burger</div>
+        <div id="searchbar">
+          <IconField iconPosition="left">
+            <InputIcon class="pi pi-search"> </InputIcon>
+            <InputText v-model="value1" placeholder="Search" />
+          </IconField>
+        </div>
+        <div v-if="userData" class="container-menu">
+          <span id="menu-cart">carts</span>
+          <span id="menu-favorites">favorites</span>
+          <span id="menu-profile">profile</span>
+          <span id="menu-profile" @click="logout">logout</span>
+        </div>
+        <div v-else><LoginDialog /></div>
+        <div id="menu-burger">menu</div>
       </div>
     </nav>
   </header>
 </template>
 
 <script setup>
+import { getCookie, logout } from '@/authen'
 import InputText from 'primevue/inputtext'
+
+const userData = getCookie('user')
+// console.log(userData)
 </script>
 
 <style scoped>
@@ -43,15 +56,26 @@ import InputText from 'primevue/inputtext'
 }
 
 .container-menu > div {
-  background-color: aliceblue;
   margin: auto;
   padding: 0.5rem;
 }
-
+.container-menu {
+  > span {
+    margin: auto;
+    padding: 0.5rem;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 #searchbar {
+  margin: auto;
+}
+
+.p-inputtext {
+  font-size: 12px;
   width: 333px;
-  padding: 0.5rem;
-  margin: 1rem;
 }
 
 .p-inputtext {

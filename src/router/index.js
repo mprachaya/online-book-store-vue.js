@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { HomePage, FavoritesPage, CartPage, BookDetailsPage, BackOfficePage } from '../pages'
+import { getCookie } from '@/authen'
 
 const routes = [
   {
@@ -20,7 +21,10 @@ const routes = [
   {
     path: '/cart',
     name: 'CartPage',
-    component: CartPage
+    component: CartPage,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/bookdetails/:bookId',
@@ -30,13 +34,25 @@ const routes = [
   {
     path: '/backoffice',
     name: 'BackOfficePage',
-    component: BackOfficePage
+    component: BackOfficePage,
+    meta: {
+      requiresAuth: true
+    }
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  const token = getCookie('token')
+  if (to.meta.requiresAuth && !token) {
+    next('/')
+  } else {
+    next()
+  }
 })
 
 export default router
