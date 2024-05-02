@@ -114,8 +114,10 @@ import VirtualScroller from 'primevue/virtualscroller'
 import LoginDialog from './components/LoginDialog.vue'
 import BookCard from './components/BookCard.vue'
 import NewBookContent from './views/home/NewBookContent.vue'
-
+import BestsellingBookContent from './views/home/BestsellingBookContent.vue'
 import AdsContent from './views/home/AdsContent.vue'
+import BookContent from './views/bookdetails/BookContent.vue'
+import ReviewContent from './views/bookdetails/ReviewContent.vue'
 
 const app = createApp(App)
 
@@ -233,5 +235,8 @@ app.component('LoginDialog', LoginDialog)
 app.component('BookCard', BookCard)
 app.component('AdsContent', AdsContent)
 app.component('NewBookContent', NewBookContent)
+app.component('BestsellingBookContent', BestsellingBookContent)
+app.component('BookContent', BookContent)
+app.component('ReviewContent', ReviewContent)
 
 app.mount('#app')

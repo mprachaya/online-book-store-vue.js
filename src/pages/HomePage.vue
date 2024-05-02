@@ -5,6 +5,9 @@
   <div class="newbook-container">
     <NewBookContent />
   </div>
+  <div class="bestselling-container">
+    <BestsellingBookContent />
+  </div>
 </template>
 <script>
 export default {
@@ -16,6 +19,9 @@ export default {
   margin-top: 0.5rem;
 }
 .newbook-container {
+  margin: auto;
+}
+.bestselling-container {
   margin: auto;
 }
 </style>

@@ -59,8 +59,6 @@ const fetchAds = () => {
       subAds.value = res.data.adverts_sub
     })
     .finally(() => {
-      console.log(mainAds.value)
-      console.log(subAds.value)
       loading.value = false
     })
 }

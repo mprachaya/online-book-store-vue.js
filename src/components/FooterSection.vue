@@ -1,5 +1,6 @@
 <template>
   <footer>
+    <Divider style="margin-top: 6rem" />
     <div class="container">
       <div class="logoAndDesc">logo and desc</div>
       <div class="listContainer">

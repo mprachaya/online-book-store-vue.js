@@ -1,14 +1,14 @@
 <template>
   <div class="book-header-section">
-    <div class="title-section">New Books</div>
+    <div class="title-section">Best Selling Books</div>
     <div class="view-all-section"><i class="pi pi-chevron-right"></i>View All</div>
   </div>
   <div class="grid-container">
-    <div v-for="card in newBooks.slice(0, 5)">
+    <div v-for="card in bestSellingBooks.slice(0, 10)">
       <div class="grid-item">
         <Card class="card-container">
-          <template #subtitle>
-            <Chip label="New" icon="pi pi-plus" />
+          <template #subtitle class="best-selling">
+            <Chip label="Best Selling" icon="pi pi-dollar" />
           </template>
           <template #header>
             <img alt="bookImage" :src="imageEndPoint + card.book_image_data" />
@@ -42,41 +42,40 @@
 <script>
 import { ref } from 'vue'
 import axios from 'axios'
-import { getCookie } from '@/authen'
 
 const url = import.meta.env.VITE_APP_API_URL_ENDPOINT
 const imageEndPoint = import.meta.env.VITE_APP_IMAGE_ENDPOINT
-const newBooks = ref([])
+const bestSellingBooks = ref([])
 const loading = ref(true)
 // const token = getCookie('token')
 
-const fetchNewBooks = () => {
+const fetchBestSellingBooks = () => {
   // if (!token) {
   //   return
   // }
   loading.value = true
   axios
-    .get(url + 'newbooks', {
+    .get(url + 'bestsellingbooks', {
       // headers: {
       //   Authorization: 'Bearer ' + token
       // }
     })
     .then((res) => {
-      newBooks.value = res.data
-      // console.log(res.data)
+      bestSellingBooks.value = res.data
+      console.log(res.data)
     })
     .finally(() => {
-      // console.log(newBooks.value)
+      console.log(bestSellingBooks.value)
       loading.value = false
     })
 }
 
 export default {
   setup() {
-    return { imageEndPoint, newBooks }
+    return { imageEndPoint, bestSellingBooks }
   },
   mounted() {
-    fetchNewBooks()
+    fetchBestSellingBooks()
   }
 }
 </script>

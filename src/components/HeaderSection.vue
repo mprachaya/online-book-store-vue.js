@@ -1,11 +1,11 @@
 <template>
-  <header class="sticky-header" :class="{ change_color: scrollPosition > 50 && !userData }">
+  <header class="sticky-header" :class="{ change_color: scrollPosition > 200 && !userData }">
     <nav id="navbar" class="container">
       <div class="logo">
         <i class="pi pi-book" style="font-size: 1.2rem"></i><span>Wannabe</span>
       </div>
 
-      <div class="container-menu" :class="{ hide_search: scrollPosition > 50 }">
+      <div class="container-menu" :class="{ hide_search: scrollPosition > 220 }">
         <div v-if="userData" class="container-menu">
           <span id="menu-cart"
             >carts <i class="pi pi-shopping-cart" style="font-size: 1rem"></i
@@ -73,7 +73,6 @@ export default {
   > #searchbar {
     opacity: 0;
     height: 0;
-    overflow: hidden;
   }
 }
 
@@ -98,8 +97,8 @@ export default {
 
 .container-menu > div {
   margin: auto;
-  padding: 0.25rem;
   padding-right: 0;
+  margin-bottom: 1rem;
 }
 .container-menu {
   > span {
@@ -140,6 +139,7 @@ export default {
 }
 
 #searchbar {
+  height: auto;
   transition:
     opacity 0.2s ease-in-out,
     height 0.2s ease-in-out;
