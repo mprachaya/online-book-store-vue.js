@@ -1,10 +1,11 @@
 <template>
-  <header class="sticky-header" :class="{ change_color: scrollPosition > 50 }">
+  <header class="sticky-header" :class="{ change_color: scrollPosition > 50 && !userData }">
     <nav id="navbar" class="container">
       <div class="logo">
         <i class="pi pi-book" style="font-size: 1.2rem"></i><span>Wannabe</span>
       </div>
-      <div class="container-menu">
+
+      <div class="container-menu" :class="{ hide_search: scrollPosition > 50 }">
         <div v-if="userData" class="container-menu">
           <span id="menu-cart"
             >carts <i class="pi pi-shopping-cart" style="font-size: 1rem"></i
@@ -44,7 +45,8 @@ export default {
     window.addEventListener('scroll', updateScroll)
     return {
       scrollPosition, // Expose showHeader to the template
-      userData
+      userData,
+      logout
     }
   }
 }
@@ -65,7 +67,14 @@ export default {
 }
 .change_color {
   transition: all 0.3s ease-in;
-  background-color: rgba(218, 239, 231, 0.95);
+  background-color: rgba(240, 240, 240, 0.9);
+}
+.hide_search {
+  > #searchbar {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
 }
 
 .container {
@@ -74,6 +83,7 @@ export default {
 }
 
 .logo {
+  /* color: var(--gray-400); */
   cursor: pointer;
   margin-top: auto;
   margin-bottom: auto;
@@ -130,6 +140,9 @@ export default {
 }
 
 #searchbar {
+  transition:
+    opacity 0.2s ease-in-out,
+    height 0.2s ease-in-out;
   margin: auto;
 }
 
@@ -152,10 +165,16 @@ export default {
   .sticky-header {
     padding: 0.2rem;
   }
+
   .container-menu > div {
     margin: 0.5rem;
   }
 
+  .container-menu {
+    > span {
+      font-size: 10px;
+    }
+  }
   .logo {
     margin: 2rem;
     margin-top: 1rem;

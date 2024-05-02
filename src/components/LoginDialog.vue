@@ -253,7 +253,7 @@ watch(visibleRegis, (newValue) => {
   font-size: 12px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
     Verdana, sans-serif;
-  color: var(--gray-600);
+  // color: var(--gray-300);
   padding: 0.75rem;
 }
 
