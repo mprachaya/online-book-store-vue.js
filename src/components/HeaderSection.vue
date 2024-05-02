@@ -1,10 +1,11 @@
 <template>
   <header class="sticky-header" :class="{ change_color: scrollPosition > 200 && !userData }">
     <nav id="navbar" class="container">
-      <div class="logo">
-        <i class="pi pi-book" style="font-size: 1.2rem"></i><span>Wannabe</span>
-      </div>
-
+      <RouterLink to="/" style="color: black; text-decoration: none">
+        <div class="logo">
+          <i class="pi pi-book" style="font-size: 1.2rem"></i><span>Wannabe</span>
+        </div>
+      </RouterLink>
       <div class="container-menu" :class="{ hide_search: scrollPosition > 220 }">
         <div v-if="userData" class="container-menu">
           <span id="menu-cart"

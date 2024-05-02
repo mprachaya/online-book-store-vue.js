@@ -1,5 +1,4 @@
 <template>
-  <div>book details ById {{ $route.params.bookId }}</div>
   <div class="book-container">
     <BookContent :bookId="$route.params.bookId" />
   </div>
