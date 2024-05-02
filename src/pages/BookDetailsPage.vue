@@ -1,7 +1,7 @@
 <template>
   <div>book details ById {{ $route.params.bookId }}</div>
   <div class="book-container">
-    <BookContent />
+    <BookContent :bookId="$route.params.bookId" />
   </div>
   <div class="review-container">
     <ReviewContent />
