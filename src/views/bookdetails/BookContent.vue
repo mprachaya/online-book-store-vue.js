@@ -40,25 +40,29 @@
               <div>{{ bookDetails.book_total_page }}</div>
             </div>
           </div>
+          <div class="footer-action">
+            <span id="menu-cart"
+              >add to cart <i class="pi pi-shopping-cart" style="font-size: 1rem"></i
+            ></span>
+            <span id="menu-favorites"
+              >favorites <i class="pi pi-heart-fill" style="font-size: 0.9rem"></i
+            ></span>
+          </div>
         </TabPanel>
         <TabPanel header="Description">
           <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-            sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-            voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.
+            {{ bookDetails.book_description }}
           </p>
         </TabPanel>
         <TabPanel header="Book Related">
-          <p>
+          <!-- <p>
             At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
             voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
             occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
             mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
             expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque
             nihil impedit quo minus.
-          </p>
+          </p> -->
         </TabPanel>
       </TabView>
     </div>
@@ -125,12 +129,14 @@ export default {
   width: 300px;
 }
 p {
-  text-align: start;
+  overflow-y: scroll;
+  max-height: 300px;
+  text-align: justify;
 }
 .book-header {
+  margin-top: 1.2rem;
   font-size: 14px;
   display: flex;
-
   gap: 0.5rem;
 }
 .book-header .writer-name {
@@ -152,7 +158,7 @@ p {
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 20%;
-  margin-top: 0.75rem;
+  margin-top: 2rem;
   justify-content: start;
 }
 .book-specific > div {
@@ -163,12 +169,30 @@ p {
   width: 500px;
   min-width: 330px;
 }
+.footer-action {
+  display: flex;
+  margin-top: 4.8rem;
+  gap: 1.5rem;
+}
+.footer-action > span {
+  border-radius: 24px 4px 4px 4px;
+  border: 1px solid;
+  padding: 0.75rem;
+  background-color: white;
+  transition: all 0.1s ease-out;
+}
+.footer-action > span:hover {
+  cursor: pointer;
+  border-radius: 0px 24px 24px 24px;
+  color: white;
+  background-color: black;
+  scale: 1.1;
+}
 
 @media screen and (max-width: 768px) {
   .container {
     display: grid;
     grid-template-columns: auto;
-    width: 100%;
     margin: auto;
   }
   .book-header {
@@ -180,6 +204,14 @@ p {
   }
   .book-specific {
     justify-content: center;
+  }
+  .footer-action {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+  .p-tabview {
+    width: auto;
   }
 }
 </style>

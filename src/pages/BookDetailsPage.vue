@@ -1,9 +1,12 @@
 <template>
-  <div class="book-container">
-    <BookContent :bookId="$route.params.bookId" />
-  </div>
-  <div class="review-container">
-    <ReviewContent />
+  <div class="main-container">
+    <div class="book-container">
+      <BookContent :bookId="$route.params.bookId" />
+    </div>
+    <Divider />
+    <div class="review-container">
+      <ReviewContent />
+    </div>
   </div>
 </template>
 <script>
@@ -11,7 +14,11 @@ export default {
   name: 'BookDetailsPage'
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+.main-container {
+  max-width: 1080px;
+  margin: auto;
+}
 .book-container {
   display: flex;
 }
